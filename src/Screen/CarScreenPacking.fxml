@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AppMainScreenController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="380.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </BorderPane.margin>
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="81.0" onMouseClicked="#showAppScreen" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icons/icon_angle-left.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="X Prototype">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <GridPane prefHeight="1024.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="642.6666870117188" minHeight="10.0" prefHeight="581.3333740234375" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="504.0" minHeight="10.0" prefHeight="442.6666259765625" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="566.0" fitWidth="679.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/left_side.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <ImageView fitHeight="566.0" fitWidth="679.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/right_side.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/rear_view.png" />
+                     </image>
+                  </ImageView>
+               </children></VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

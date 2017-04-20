@@ -23,16 +23,40 @@ public class AppMainScreenController extends Application implements Initializabl
 	@FXML ImageView antiThiefButton;
 	@FXML ImageView packingButton;
 	
-	private boolean activeDoor = false;
-	private boolean activeAntiThief = false;
-	private boolean activePacking = false;
+	private static boolean activeDoor = false;
+	private static boolean activeAntiThief = false;
+	private static boolean activePacking = false;
 	
 	public static Stage primaryStage;
 	public static BorderPane mainLayout;
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+		Image img;
+		if(doorButton != null) {
+			if(!activeDoor) {
+				img = new Image("file:images/icons/icon_hand-pointer-o.png");	
+			} else {
+				img = new Image("file:images/green_hand.png");
+			}
+	        doorButton.setImage(img);
+		}
+		if(antiThiefButton != null) {
+			if(!activeAntiThief) {
+				img = new Image("file:images/icons/icon_user-times.png");	
+			} else {
+				img = new Image("file:images/green_anti_thief.png");
+			}
+	        antiThiefButton.setImage(img);
+		}
+		if(packingButton != null) {
+			if(!activePacking) {
+				img = new Image("file:images/icons/icon_automobile.png");	
+			} else {
+				img = new Image("file:images/green_car.png");
+			}
+	        packingButton.setImage(img);
+		}
 	}
 	
 	public void btnDoorClickedNotify() {
@@ -102,6 +126,15 @@ public class AppMainScreenController extends Application implements Initializabl
 	public void showAppScreen() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/Screen/AppMainScreen.fxml"));
+		mainLayout = loader.load();
+		Scene scene = new Scene(mainLayout);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
+	public void showCarScreenPacking() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/Screen/CarScreenPacking.fxml"));
 		mainLayout = loader.load();
 		Scene scene = new Scene(mainLayout);
 		primaryStage.setScene(scene);
