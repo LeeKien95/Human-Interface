@@ -8,16 +8,19 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class AppMainScreenController extends Application implements Initializable{
 	@FXML ImageView doorButton;
 	
 	public static Stage primaryStage;
+	public static Stage secondStage;
 	public static BorderPane mainLayout;
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -85,8 +88,21 @@ public class AppMainScreenController extends Application implements Initializabl
 		this.primaryStage = primaryStage;
 //		this.primaryStage.setTitle("AppScreen");
 		showAppScreen();
+		showCarScreen();
 	}
 	
+	private void showCarScreen() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/Screen/CarScreen.fxml"));
+		Scene scene = new Scene((Parent) loader.load());
+		secondStage = new Stage();
+		secondStage.initStyle(StageStyle.UNDECORATED);
+		secondStage.setScene(scene);
+		secondStage.show();
+		secondStage.setX(100);
+		secondStage.setY(100);
+	}
+
 	public static void main(String[] args) {
 		launch(args);
 	}
